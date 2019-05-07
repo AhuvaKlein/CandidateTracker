@@ -1,0 +1,33 @@
+﻿@model Candidate
+@using CandidateTracker.Data
+
+<div class="row">
+    <div class="col-md-4 col-md-offset-4 well">
+        <table class="table table-bordered table-striped">
+            <tr>
+                <td>Name</td>
+                <td style="text-align:center;">@Model.FirstName @Model.LastName</td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td style="text-align:center;">@Model.Email</td>
+            </tr>
+            <tr>
+                <td>Phone</td>
+                <td style="text-align:center;">@Model.Phone</td>
+            </tr>
+            <tr>
+                <td>Notes</td>
+                <td style="text-align:center;">@Model.Notes</td>
+            </tr>
+            <tr id="button-row">
+                <td style="text-align:center;"><button class="btn btn-danger" id="confirm" data-id="@Model.Id">Confirm</button></td>
+                <td style="text-align:center;"><button class="btn btn-warning" id="decline" data-id="@Model.Id">Decline</button></td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+@section scripts{
+    <script src="~/js/candidates.js"></script>
+}
