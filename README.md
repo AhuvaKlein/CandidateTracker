@@ -1,6 +1,7 @@
 # CandidateTracker
 
 Assignment:
+
 Create an application to track potential student/candidates for an upcoming course.
 
 On the home page, display 4 links: Add Candidate, View Pending, View Confirmed
