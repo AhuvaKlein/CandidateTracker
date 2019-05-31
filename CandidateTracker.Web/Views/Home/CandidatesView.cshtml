@@ -9,7 +9,9 @@
     <table class="table table-bordered table-striped" style="margin-top: 30px;">
         <tr>
             @if (Model.IsPending)
-            {<th>View Details</th>}
+            {
+                <th>View Details</th>
+            }
             <th>First Name</th>
             <th>Last Name</th>
             <th>Email</th>
@@ -22,14 +24,15 @@
             {
                 <tr>
                     @if (Model.IsPending)
-                    {<td><a href="/home/viewdetails?id=@c.Id">View Details</a></td>}
+                    {
+                        <td><a href="/home/viewdetails?id=@c.Id">View Details</a></td>
+                    }
                     <td>@c.FirstName</td>
                     <td>@c.LastName</td>
                     <td>@c.Email</td>
                     <td>@c.Phone</td>
                     <td class="notes">@c.Notes</td>
                 </tr>
-
             }
         }
     </table>
