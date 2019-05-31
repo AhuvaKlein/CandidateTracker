@@ -29,11 +29,11 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="AddCandidate" class="nav-link">Add Candidate</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Pending">Pending(<span id="pending-count">@ViewBag.Pending</span>)</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Confirmed">Confirmed(<span id="confirmed-count">@ViewBag.Confirmed</span>)</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Declined">Declined(<span id="declined-count">@ViewBag.Declined</span>)</a></li>
+                    <li class="@(ViewBag.PageType == PageType.Home ? "active" : "")"><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+                    <li class="@(ViewBag.PageType == PageType.Add ? "active" : "")"><a asp-area="" asp-controller="Home" asp-action="AddCandidate" class="nav-link">Add Candidate</a></li>
+                    <li class="@(ViewBag.PageType == PageType.Pending ? "active" : "")"><a asp-area="" asp-controller="Home" asp-action="Pending">Pending(<span id="pending-count">@ViewBag.Pending</span>)</a></li>
+                    <li class="@(ViewBag.PageType == PageType.Confirmed ? "active" : "")"><a asp-area="" asp-controller="Home" asp-action="Confirmed">Confirmed(<span id="confirmed-count">@ViewBag.Confirmed</span>)</a></li>
+                    <li class="@(ViewBag.PageType == PageType.Declined ? "active" : "")"><a asp-area="" asp-controller="Home" asp-action="Declined">Declined(<span id="declined-count">@ViewBag.Declined</span>)</a></li>
                 </ul>
             </div>
         </div>

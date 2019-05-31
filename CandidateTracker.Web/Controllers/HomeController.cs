@@ -26,11 +26,13 @@ namespace CandidateTracker.Web.Controllers
 
         public IActionResult Index()
         {
+            ViewBag.PageType = PageType.Home;
             return View();
         }
 
         public IActionResult AddCandidate()
         {
+            ViewBag.PageType = PageType.Add;
             return View();
         }
 
@@ -47,6 +49,7 @@ namespace CandidateTracker.Web.Controllers
             vm.Candidates = _repo.GetPendingCandidates();
             vm.Title = "Pending Candidates";
             vm.IsPending = true;
+            ViewBag.PageType = PageType.Pending;
             return View("CandidatesView", vm);
         }
 
@@ -56,6 +59,7 @@ namespace CandidateTracker.Web.Controllers
             vm.Candidates = _repo.GetConfirmedCandidates();
             vm.Title = "Confirmed Candidates";
             vm.IsPending = false;
+            ViewBag.PageType = PageType.Confirmed;
             return View("CandidatesView", vm);
         }
 
@@ -65,6 +69,7 @@ namespace CandidateTracker.Web.Controllers
             vm.Candidates = _repo.GetDeclinedCandidates();
             vm.Title = "Declined Candidates";
             vm.IsPending = false;
+            ViewBag.PageType = PageType.Declined;
             return View("CandidatesView", vm);
         }
 
